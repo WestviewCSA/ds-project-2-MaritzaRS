@@ -1,6 +1,68 @@
-Design Plan - P@
+Design Plan - P2
 Due: 3/12/25 11;59pm
 
 After reading the specs, start populating
 a list of things you think you might have
 to do to finish the project.
+
+
+
+Prompt: Wolverine is looking for a diamond 
+in the Torrey Pines State Reserve. He's going through
+a maze and needs guidance.
+
+Objectives Summarized:
+Implement an algorithm per spec in java
+Use java stack, queue, 2D/3D arrays, classes
+Use test case and file i/o
+Develop solution for the prompt
+
+
+Initial thoughts:
+Frustratingly vague.
+Help a character get through the maze, like you
+tried for the animal crossing project.
+I will need some loops, likely using a variable
+in placement inside of a 2D array.
+However, the likely thinking is that instead of 
+using a variable, I will use a Node as a complex
+character model.
+I will need the stack and queue to figure out 
+when and where the diamond is and how the 
+Wolverine needs to traverse it. 
+Actually, maybe I should read the actual specs
+
+
+Some things to remember:
+	- Need to change the "." to a "+" to indicate the path taken
+	- Consider appropriate Run Time
+	- Choose either stack or queue
+	- Stick with the 2D arrays
+	- Hold off on Command Line Arguments
+	- Free to use any routing approach, but it must be faster than
+	  queue runtime + stack-based approaches
+	- Can use a text map or an integer based map
+	  -> 1# = rows, 2# = cols, 3# = # of mazes
+	- Could also create a multiple room levels
+
+Wise Guidance from Teacher David:
+1) read the specs - understand the problem
+2) Understand map-based input files
+3) GOAL: To either escape or find the diamond
+
+
+Thus, I need these steps:
+1) Create a Node model for the Wolverine (in the form of a Node).
+2) Create a 2D array to store the Maze.
+3) Use stacks/queue (?) to traverse the each row/col.
+4) Create a run time system in seconds
+5) Create a Test File for corner cases or errors
+6) 
+
+
+
+
+
+
+
+
