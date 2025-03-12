@@ -1,8 +1,8 @@
 
 public class Map {
 	
-	//private Tile[][] map;
-	
+	private Tile[][] map;
+	//given a 2D array of Tiles
 	
 	
 	
