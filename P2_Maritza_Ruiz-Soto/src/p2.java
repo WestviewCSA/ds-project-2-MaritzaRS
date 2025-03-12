@@ -47,25 +47,30 @@ public class p2 {
 			//process the map
 			while (scan.hasNextLine()) {
 				String row = scan.nextLine();
+				
 				System.out.println(row);
-				if (row.length()>0) {
+				
+				if (row.length() > 0) {
 					for (int i = 0; i < numCols && i < row.length(); i++) {
-						char el = row.charAt(i);
+						char el = row.charAt(i); //returns the char
 						Tile obj = new Tile(rowIndex, i , el);
-						
+						//Do we want to manipulate the object here?
+						//How can I implement the obj into a 2D array?
+						//should I use 
 					}
+					
 				}
-				
-				
+				rowIndex++;
 			}
-		
+			
+			
 			
 		} catch (FileNotFoundException e) {
 			System.out.println(e);
 		}
 		
 		/*
-		 * Deliminator: 
+		 * Delimiter: 
 		 * Can allow the system to ignore certain input
 		 * Thinking about use for ignoring the text in 1_FromSpecs
 		 * or other mazes using out of allowed bounds
@@ -77,6 +82,8 @@ public class p2 {
 		 * 
 		 * char:
 		 * data type to store a single character, in quote marks
+		 * 
+		 * 
 		 * 
 		 */
 		

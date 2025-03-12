@@ -5,7 +5,7 @@ public class Tile {
 	private char type;
 	
 	public Tile (int row, int col, char type) {
-		super();
+		super(); //allows the method to refer to the parent class
 		this.row = row;
 		this.col = col;
 		this.type = type;
@@ -29,6 +29,5 @@ public class Tile {
 	public void setType(char type) {
 		this.type = type;
 	}
-	
 	
 }
