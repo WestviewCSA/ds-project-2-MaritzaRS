@@ -6,6 +6,8 @@ import java.util.regex.MatchResult;
 
 public class p2 {
 	private static Queue<Tile> maze;
+	private static Tile wolverine;
+	private static ArrayList<Queue> coord;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -14,22 +16,13 @@ public class p2 {
 		 * From David
 		 * 
 		 */
-		
-		
 		maze = new Queue<Tile>();
 		
 		//ArrayList<Queue> coord = new ArrayList<Queue>();
 		
 		readMap("2_FromSpecs");
-		System.out.println(maze);
+		//System.out.println(maze);
 		
-//		ArrayList<Stack> maze = new ArrayList<Stack>();
-//		ArrayList<Queue> coord = new ArrayList<Queue>();
-//		
-//		String Wolverine = "W";
-//		
-//		Scanner scan = new Scanner(System.in);
-//		
 //		scan.findWithinHorizon(Wolverine, 0);
 		
 		if (impossible() == true) {
@@ -56,14 +49,24 @@ public class p2 {
 				String row = scan.nextLine();
 				
 				System.out.println(row);
+				/*
+				 * for sum reason, this line is printing my maze
+				 * One row at a time
+				 * why
+				 * how 
+				 */
+				
 				//For each row, if it has char, I want it to add to the arraylist
 				if (row.length() > 0) {
 					for (int i = 0; i < numCols && i < row.length(); i++) {
 						char el = row.charAt(i); //returns the char
 						Tile obj = new Tile(rowIndex, i, el); //row, col, type
-						//Do we want to manipulate the object here?
 						//How can I implement the obj into a 2D array?
-						maze.enqueue(obj);
+						//maze.enqueue(obj);
+						if (el == 'W') {
+							wolverine = obj;
+							//this is how I locate the wolverine (?)
+						}
 						
 					}
 					
@@ -81,7 +84,7 @@ public class p2 {
 	/*
 	 * Used to add to the coordinate list when Wol moved
 	 */
-	public void move(ArrayList sun) {
+	public void move() {
 		
 		
 	}
