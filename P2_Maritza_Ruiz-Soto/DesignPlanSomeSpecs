@@ -78,7 +78,19 @@ Need to create a separate array list in order to
 	- Otherwise known as being able to check each row/col of the map
 	- The slash is essentially a door to the next maze room
 	- What are the numbers in the Maze???
+	
+	
+3/13 Notes:
+	- Objective: continue with map based input, and move to coordinate based
+	- The point of the coordinate system is likely to assume what moves have 
+	  been made, similar to chess
+	- It essentially creates another (?) array with each row being a move. 
+	- Map char,  Row,  Col,  Maze "Level"
+	- It looks like we can choose one or the other to print out (?)
+	- It's best to leave the portal and levels for another day.
+	- What the flip, am I actually kind of getting the assignment???????
 	- 
+	
 
 
 

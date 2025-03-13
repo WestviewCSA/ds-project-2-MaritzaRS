@@ -29,6 +29,10 @@ public class p2 {
 //		
 //		scan.findWithinHorizon(Wolverine, 0);
 		
+		if (impossible() == true) {
+			System.out.println("The Wolverine Store is closed.");
+		}
+		
 	}
 	
 	public static void readMap(String filename) {
@@ -96,6 +100,16 @@ public class p2 {
 	public void move(ArrayList sun) {
 		
 		
+	}
+	
+	
+	/*
+	 * Used to determine if it is possible to solve
+	 */
+	public static boolean impossible() {
+		boolean temp = false;
+		
+		return temp;
 	}
 
 }

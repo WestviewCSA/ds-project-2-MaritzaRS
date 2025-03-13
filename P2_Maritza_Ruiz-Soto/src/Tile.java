@@ -3,6 +3,11 @@ public class Tile {
 	
 	private int row, col;
 	private char type;
+	//In a coordinate based map, rol, col are x and y respectively
+	//thus, Tile takes the place of a coordinate point in map
+	//However, what's the role of Tile in coordinate based?
+	//It seems that the Tile is the map element represented in 0 col
+	//
 	
 	public Tile (int row, int col, char type) {
 		super(); //allows the method to refer to the parent class
