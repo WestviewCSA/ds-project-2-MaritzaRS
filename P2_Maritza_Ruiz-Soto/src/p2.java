@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.util.regex.MatchResult;
 
 public class p2 {
+	private static Queue<Tile> maze;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -13,12 +14,14 @@ public class p2 {
 		 * From David
 		 * 
 		 */
-		readMap("4_Personal");
 		
-		/*
-		 * Need to make a Queue
-		 * 
-		 */
+		
+		maze = new Queue<Tile>();
+		
+		//ArrayList<Queue> coord = new ArrayList<Queue>();
+		
+		readMap("2_FromSpecs");
+		System.out.println(maze);
 		
 //		ArrayList<Stack> maze = new ArrayList<Stack>();
 //		ArrayList<Queue> coord = new ArrayList<Queue>();
@@ -53,14 +56,15 @@ public class p2 {
 				String row = scan.nextLine();
 				
 				System.out.println(row);
-				
+				//For each row, if it has char, I want it to add to the arraylist
 				if (row.length() > 0) {
 					for (int i = 0; i < numCols && i < row.length(); i++) {
 						char el = row.charAt(i); //returns the char
-						Tile obj = new Tile(rowIndex, i , el);
+						Tile obj = new Tile(rowIndex, i, el); //row, col, type
 						//Do we want to manipulate the object here?
 						//How can I implement the obj into a 2D array?
-						//should I use 
+						maze.enqueue(obj);
+						
 					}
 					
 				}
@@ -68,29 +72,9 @@ public class p2 {
 			}
 			
 			
-			
 		} catch (FileNotFoundException e) {
 			System.out.println(e);
 		}
-		
-		/*
-		 * Delimiter: 
-		 * Can allow the system to ignore certain input
-		 * Thinking about use for ignoring the text in 1_FromSpecs
-		 * or other mazes using out of allowed bounds
-		 * 
-		 * try:
-		 * can be used to try a segment of code,
-		 * as long as able to be run, and "catch" and exception 
-		 * if otherwise
-		 * 
-		 * char:
-		 * data type to store a single character, in quote marks
-		 * 
-		 * 
-		 * 
-		 */
-		
 		
 	}
 	

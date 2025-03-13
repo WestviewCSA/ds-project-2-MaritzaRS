@@ -67,11 +67,6 @@ Need to create a separate array list in order to
 		 * then it provides 3 ints
 		 * to row moved, to col moved, and level of maze
 		 
-		 
-		 
-		 
-		 Notes :
-		 char contains a single letter or character
 
 3/12 Notes:
 	- Today's focus is map-reading
@@ -89,8 +84,20 @@ Need to create a separate array list in order to
 	- It looks like we can choose one or the other to print out (?)
 	- It's best to leave the portal and levels for another day.
 	- What the flip, am I actually kind of getting the assignment???????
+	- Here are some things that might be useful to the cause:
+		  Delimiter: 
+		  Can allow the system to ignore certain input
+		  Thinking about use for ignoring the text in 1_FromSpecs
+		  or other mazes using out of allowed bounds
+		  
+		  try:
+		  can be used to try a segment of code,
+		  as long as able to be run, and "catch" and exception 
+		  if otherwise
+		  
+		  char:
+		  data type to store a single character, in quote marks
 	- 
-	
 
 
 
