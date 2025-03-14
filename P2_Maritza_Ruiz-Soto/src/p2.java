@@ -7,7 +7,7 @@ import java.util.regex.MatchResult;
 public class p2 {
 	private static Queue<Tile> maze;
 	private static Tile wolverine;
-	private static ArrayList<Queue> coord;
+	private static ArrayList<String> coord;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -17,6 +17,8 @@ public class p2 {
 		 * 
 		 */
 		maze = new Queue<Tile>();
+		
+		coord = new ArrayList<String>();
 		
 		//ArrayList<Queue> coord = new ArrayList<Queue>();
 		
@@ -35,7 +37,8 @@ public class p2 {
 		
 		try {
 			File file = new File("TestCases/"+filename);
-			Scanner scan = new Scanner(file);
+			
+			Scanner scan = new Scanner(file); //taking in the file input
 			
 			int numRows = scan.nextInt();
 			int numCols = scan.nextInt();
@@ -43,6 +46,9 @@ public class p2 {
 			
 			int rowIndex = 0;
 			//MatchResult s = scan.match();
+			System.out.println();
+			coord.add(numRows + " " + numCols + " " + numRooms);
+			System.out.println(coord);
 			
 			//process the map
 			while (scan.hasNextLine()) {
@@ -52,8 +58,7 @@ public class p2 {
 				/*
 				 * for sum reason, this line is printing my maze
 				 * One row at a time
-				 * why
-				 * how 
+				 * 
 				 */
 				
 				//For each row, if it has char, I want it to add to the arraylist
@@ -62,16 +67,21 @@ public class p2 {
 						char el = row.charAt(i); //returns the char
 						Tile obj = new Tile(rowIndex, i, el); //row, col, type
 						//How can I implement the obj into a 2D array?
-						//maze.enqueue(obj);
+						maze.enqueue(obj);
+						
 						if (el == 'W') {
 							wolverine = obj;
 							//this is how I locate the wolverine (?)
 						}
 						
+						coord.add(el + " " + i + " " + rowIndex + " " + numRooms);
+						System.out.println(coord);
+						coord.clear();
 					}
 					
 				}
 				rowIndex++;
+				
 			}
 			
 			
