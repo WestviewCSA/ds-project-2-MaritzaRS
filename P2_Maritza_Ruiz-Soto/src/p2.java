@@ -21,10 +21,6 @@ public class p2 {
 		
 		coord = new ArrayList<String>();
 		
-		
-		
-		//ArrayList<Queue> coord = new ArrayList<Queue>();
-		
 		readMap("2_FromSpecs");
 		//System.out.println(maze);
 		
@@ -51,7 +47,7 @@ public class p2 {
 			//MatchResult s = scan.match();
 			System.out.println();
 			coord.add(numRows + " " + numCols + " " + numRooms);
-			System.out.println(coord);
+			//System.out.println(coord);
 			
 			int counter = 0;
 			
@@ -70,7 +66,7 @@ public class p2 {
 				if (row.length() > 0) {
 					for (int i = 0; i < numCols && i < row.length(); i++) {
 						char el = row.charAt(i); //returns the char
-						counter++;
+						//counter++;
 						Tile obj = new Tile(rowIndex, i, el); //row, col, type
 						//How can I implement the obj into a 2D array?
 						maze.enqueue(obj);
@@ -79,20 +75,23 @@ public class p2 {
 							wolverine = obj;
 							//this is how I locate the wolverine (?)
 						}
-						
-						
-						coord.add(el + " " + i + " " + rowIndex + " " + numRooms);
-						System.out.println(coord);
-						coord.clear();
+//						
+//						
+//						coord.add(el + " " + i + " " + rowIndex + " " + numRooms);
+//						//System.out.println(coord);
+//						coord.clear();
 					}
 					
 				}
 				rowIndex++;
 				
-				coord2 = new String[counter][4];
 				
 			}
 			
+			System.out.println();
+			System.out.println(numRows + " " + numCols + " " + numRooms);
+			coord2 = new String[counter][4];
+			//coord2[0][coord2[0].length] = []{0, 0, 0, numRows}];
 			
 		} catch (FileNotFoundException e) {
 			System.out.println(e);
@@ -101,11 +100,70 @@ public class p2 {
 	}
 	
 	/*
-	 * Used to add each character to the in
+	 * Used to add each character to the in the coordinate based map
+	 * Might not use this. Copied over the readMap so that i can manipulate better
 	 */
 	public static void addCoord(String filename, ArrayList<String> arr) {
-		
-		
+
+		try {
+			File file = new File("TestCases/"+filename);
+			Scanner scan = new Scanner(file); //taking in the file input
+			
+			int numRows = scan.nextInt();
+			int numCols = scan.nextInt();
+			int numRooms = scan.nextInt();
+			
+			int rowIndex = 0;
+			//MatchResult s = scan.match();
+			System.out.println();
+			coord.add(numRows + " " + numCols + " " + numRooms);
+			
+			int counter = 0;
+			
+			//process the map
+			while (scan.hasNextLine()) {
+				String row = scan.nextLine();
+				
+				//System.out.println(row);
+				/*
+				 * for sum reason, this line is printing my maze
+				 * One row at a time
+				 * 
+				 */
+				//For each row, if it has char, I want it to add to the arraylist
+				if (row.length() > 0) {
+					for (int i = 0; i < numCols && i < row.length(); i++) {
+						char el = row.charAt(i); //returns the char
+						counter++;
+						Tile obj = new Tile(rowIndex, i, el); //row, col, type
+						//How can I implement the obj into a 2D array?
+						maze.enqueue(obj);
+						
+//						if (el == 'W') {
+//							wolverine = obj;
+//							//this is how I locate the wolverine (?)
+//						}
+						
+						
+						coord.add(el + " " + i + " " + rowIndex + " " + numRooms);
+						//System.out.println(coord);
+						coord.clear();
+					}
+					
+				}
+				rowIndex++;
+				
+				
+			}
+			
+			System.out.println();
+			System.out.println(numRows + " " + numCols + " " + numRooms);
+			coord2 = new String[counter][4];
+			//coord2[0][coord2[0].length] = []{0, 0, 0, numRows}];
+			
+		} catch (FileNotFoundException e) {
+			System.out.println(e);
+		}
 		
 		
 		
