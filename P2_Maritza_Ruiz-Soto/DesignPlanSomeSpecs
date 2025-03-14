@@ -103,7 +103,23 @@ Need to create a separate array list in order to
 	- What a great day to be alive
 	- Obj: map reading file input - likely using scanner
 	- try coordinate based if can
-	- 
+	- I have no freaking clue what I'm doing, but I'm in good company
+	- If I thought about using readMap to be able to also add the character to
+	  the coord ArrayList but that's proving to be difficult
+	- Now I'm making another method in order to add to the ArrayList
+	- But what if I were to use another method of class instead of ArrayList
+	  so that I can bypass the printing issues?
+	- I've already tried queue, but it requires a Tile parameter, which is
+	  abstract and very much not a system I should use for the coord
+	- Array is very rigid in what it can take in, not to mention if I were to 
+	  mix String and int into the function.
+	- Man, I haven't even gotten to the door ways yet.
+	- Anyways, I need a system of storing these values without complecating things
+	- Oh frick, I'm describing a 2D array, am I?
+	- But the problem with that thing is that it's so rigid.
+	- I need as many rows as there are characters in the thing (which shouldn't
+	  be too hard or a problem).
+	- Eh, let's give it a try.
 
 
 

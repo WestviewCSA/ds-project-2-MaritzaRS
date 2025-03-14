@@ -8,6 +8,7 @@ public class p2 {
 	private static Queue<Tile> maze;
 	private static Tile wolverine;
 	private static ArrayList<String> coord;
+	private static String[][] coord2;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -19,6 +20,8 @@ public class p2 {
 		maze = new Queue<Tile>();
 		
 		coord = new ArrayList<String>();
+		
+		
 		
 		//ArrayList<Queue> coord = new ArrayList<Queue>();
 		
@@ -50,6 +53,8 @@ public class p2 {
 			coord.add(numRows + " " + numCols + " " + numRooms);
 			System.out.println(coord);
 			
+			int counter = 0;
+			
 			//process the map
 			while (scan.hasNextLine()) {
 				String row = scan.nextLine();
@@ -65,6 +70,7 @@ public class p2 {
 				if (row.length() > 0) {
 					for (int i = 0; i < numCols && i < row.length(); i++) {
 						char el = row.charAt(i); //returns the char
+						counter++;
 						Tile obj = new Tile(rowIndex, i, el); //row, col, type
 						//How can I implement the obj into a 2D array?
 						maze.enqueue(obj);
@@ -74,6 +80,7 @@ public class p2 {
 							//this is how I locate the wolverine (?)
 						}
 						
+						
 						coord.add(el + " " + i + " " + rowIndex + " " + numRooms);
 						System.out.println(coord);
 						coord.clear();
@@ -82,12 +89,27 @@ public class p2 {
 				}
 				rowIndex++;
 				
+				coord2 = new String[counter][4];
+				
 			}
 			
 			
 		} catch (FileNotFoundException e) {
 			System.out.println(e);
 		}
+		
+	}
+	
+	/*
+	 * Used to add each character to the in
+	 */
+	public static void addCoord(String filename, ArrayList<String> arr) {
+		
+		
+		
+		
+		
+		
 		
 	}
 	
