@@ -46,7 +46,7 @@ public class p2 {
 			int rowIndex = 0;
 			//MatchResult s = scan.match();
 			System.out.println();
-			coord.add(numRows + " " + numCols + " " + numRooms);
+			//coord.add(numRows + " " + numCols + " " + numRooms);
 			//System.out.println(coord);
 			
 			int counter = 0;
@@ -113,7 +113,7 @@ public class p2 {
 			int numCols = scan.nextInt();
 			int numRooms = scan.nextInt();
 			
-			int rowIndex = 0;
+			int rowIndex = 0; //Basically what col in the row.
 			//MatchResult s = scan.match();
 			System.out.println();
 			coord.add(numRows + " " + numCols + " " + numRooms);
@@ -124,12 +124,12 @@ public class p2 {
 			while (scan.hasNextLine()) {
 				String row = scan.nextLine();
 				
-				//System.out.println(row);
 				/*
 				 * for sum reason, this line is printing my maze
 				 * One row at a time
 				 * 
 				 */
+				
 				//For each row, if it has char, I want it to add to the arraylist
 				if (row.length() > 0) {
 					for (int i = 0; i < numCols && i < row.length(); i++) {
@@ -150,6 +150,16 @@ public class p2 {
 						coord.clear();
 					}
 					
+					for (int i = 0; i < numCols && i < row.length(); i++) {
+						coord2 = new String[counter][4];
+						
+						char el = row.charAt(i);
+						Tile obj = new Tile(rowIndex, i, el);
+						
+						//coord2[row][0] = el;
+						
+					}
+					
 				}
 				rowIndex++;
 				
@@ -160,13 +170,11 @@ public class p2 {
 			System.out.println(numRows + " " + numCols + " " + numRooms);
 			coord2 = new String[counter][4];
 			//coord2[0][coord2[0].length] = []{0, 0, 0, numRows}];
+			scan.close();
 			
 		} catch (FileNotFoundException e) {
 			System.out.println(e);
 		}
-		
-		
-		
 		
 		
 	}
