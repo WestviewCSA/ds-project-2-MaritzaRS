@@ -130,7 +130,7 @@ public class p2 {
 				 * 
 				 */
 				
-				//For each row, if it has char, I want it to add to the arraylist
+				//For each row, if it has char, I want it to add to the 
 				if (row.length() > 0) {
 					for (int i = 0; i < numCols && i < row.length(); i++) {
 						char el = row.charAt(i); //returns the char
@@ -139,15 +139,9 @@ public class p2 {
 						//How can I implement the obj into a 2D array?
 						maze.enqueue(obj);
 						
-//						if (el == 'W') {
-//							wolverine = obj;
-//							//this is how I locate the wolverine (?)
-//						}
-						
-						
-						coord.add(el + " " + i + " " + rowIndex + " " + numRooms);
-						//System.out.println(coord);
-						coord.clear();
+						coord.add(counter, el + " " + i + " " + rowIndex + " " + numRooms);
+						System.out.println(coord);
+						//coord.
 					}
 					
 					for (int i = 0; i < numCols && i < row.length(); i++) {
@@ -156,19 +150,20 @@ public class p2 {
 						char el = row.charAt(i);
 						Tile obj = new Tile(rowIndex, i, el);
 						
-						//coord2[row][0] = el;
+						coord2[row.length()][0] = el + " ";
 						
 					}
 					
 				}
 				rowIndex++;
 				
-				
 			}
 			
 			System.out.println();
-			System.out.println(numRows + " " + numCols + " " + numRooms);
-			coord2 = new String[counter][4];
+			
+			System.out.println(coord);
+			//System.out.println(numRows + " " + numCols + " " + numRooms);
+			//coord2 = new String[counter][4];
 			//coord2[0][coord2[0].length] = []{0, 0, 0, numRows}];
 			scan.close();
 			
