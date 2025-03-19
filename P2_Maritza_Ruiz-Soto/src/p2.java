@@ -9,13 +9,13 @@ public class p2 {
 	private static Tile wolverine;
 	private static ArrayList<String> coord;
 	private static String[][] coord2;
+	private static Tile diamond;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		/*
 		 * From David
-		 * 
 		 */
 		maze = new Queue<Tile>();
 		
@@ -74,8 +74,9 @@ public class p2 {
 						if (el == 'W') {
 							wolverine = obj;
 							//this is how I locate the wolverine (?)
+						} else if (el == '$') {
+							diamond = obj;
 						}
-//						
 //						
 //						coord.add(el + " " + i + " " + rowIndex + " " + numRooms);
 //						//System.out.println(coord);
@@ -84,7 +85,6 @@ public class p2 {
 					
 				}
 				rowIndex++;
-				
 				
 			}
 			
@@ -177,7 +177,7 @@ public class p2 {
 	/*
 	 * Used to add to the coordinate list when Wol moved
 	 */
-	public void move() {
+	public void move(Queue<Tile> help) {
 		
 		
 	}
@@ -188,6 +188,9 @@ public class p2 {
 	 */
 	public static boolean impossible() {
 		boolean temp = false;
+		
+		
+		
 		
 		return temp;
 	}
