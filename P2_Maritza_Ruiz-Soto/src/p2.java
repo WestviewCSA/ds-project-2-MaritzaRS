@@ -25,6 +25,9 @@ public class p2 {
 		
 		Tile flop = coord.dequeue();
 		
+		//coord.enqueue(wolverine);
+		maze.enqueue(wolverine);
+		
 		
 		
 		if (impossible() == true) {
@@ -74,7 +77,6 @@ public class p2 {
 						
 						if (el == 'W') {
 							wolverine = obj;
-							maze.enqueue(wolverine);
 							//coord2[0][0] = wolverine.toString() + " ";
 							//this is how I locate the wolverine (?)
 						} else if (el == '$') {

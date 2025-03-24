@@ -134,6 +134,29 @@ Need to create a separate array list in order to
 	- North South, East West locations must be enqueued into the coord list
 	- I scrapped the addCord method since it's obselete
 	- So I added
+	
+	- How it might work:
+	- find the W
+	- check North, South, East, West for walkable paths
+	- enqueue each one to another list as the system checks it
+	- Figure out which one is walkable
+	- search for the $
+	- keep moving through all the walkable places
+	- enqueue path to Another Queue, list, whatever 
+	- change . to +
+	- YEAH
+	
+	- Question: how can I get my system to determine the best path?
+	- I mean, humanly, it's pretty easy, but this is yelling at 
+	  a deaf, blind, 4 year old child to avoid a wall. Literally.
+	  I take it back, the child is a prodigy, but still less than a year old.
+	  I need to stop this; I'm going to get cancelled. Also worry about that later
+	  
+	- Okay, so I scan the possible places that the W can go.
+	- There a lot of limitations to what W can do.
+	- It seems like I can def access the row and col just from the W thanks to the Tile class
+	- Brain not braining. Rather, to be specific, it's full of brainrot.
+	- 
 
 
 
