@@ -127,7 +127,13 @@ Need to create a separate array list in order to
 	- Obj: Be able to add a coordinate point to coord ArrayList
 	- What do I need to do for impossible method?
 		- can I use it as a condition for other methods?
-		- What about using it as an idkkkkkkkkkkkkk.
+		
+3/24 Notes:
+	- Today was a walk-through for the queue formations of the entire maze
+	- Basically, dequeue the next location
+	- North South, East West locations must be enqueued into the coord list
+	- I scrapped the addCord method since it's obselete
+	- So I added
 
 
 

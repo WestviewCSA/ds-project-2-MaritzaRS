@@ -27,7 +27,7 @@ public class Queue<T> {
 		
 	}
 	
-	public void enqueue( T el) {
+	public void enqueue(T el) {
 		stA.push(el);
 	}
 	
