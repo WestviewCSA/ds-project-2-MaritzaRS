@@ -7,8 +7,8 @@ import java.util.regex.MatchResult;
 public class p2 {
 	private static Queue<Tile> queue;
 	private static Tile wolverine;
-	private static Queue<Tile> visited;
-	//private static String[][] coord2;
+	private static Stack<Tile> visited;
+	private static String[][] maze;
 	private static Tile diamond;
 	private static int Mrow;
 	private static int Mcol;
@@ -22,13 +22,13 @@ public class p2 {
 		
 		queue = new Queue<Tile>();
 		
-		visited = new Queue<Tile>();
+		visited = new Stack<Tile>();
 		
 		readMap("2_FromSpecs");
 		
-		Tile flop = visited.dequeue();
+		Tile flop = visited.pop();
 		
-		visited.enqueue(wolverine);
+		visited.push(wolverine);
 		queue.enqueue(wolverine);
 		
 		Mrow = wolverine.getRow();
@@ -38,7 +38,7 @@ public class p2 {
 		
 		//we want to peek the top of the stack,
 		//use peek
-		//fior quee use dequeue
+		//for use use dequeue
 		//
 		
 		if (impossible() == true) {
@@ -63,6 +63,7 @@ public class p2 {
 			System.out.println();
 			//coord.add(numRows + " " + numCols + " " + numRooms);
 			//System.out.println(coord);
+			maze = new String[numRows][numCols];
 			
 			int counter = 0;
 			
@@ -87,28 +88,16 @@ public class p2 {
 						} else if (el == '$') {
 							diamond = obj;
 						}
-						//queue.enqueue(obj);
+						queue.enqueue(obj);
 //						coord.add(el + " " + i + " " + rowIndex + " " + numRooms);
-						
+						maze[rowIndex][i] = el + " ";
 						
 					}
 					
 				}
 				rowIndex++;
+				queue.enqueue(null);
 				
-			}
-			
-			if (Mrow > 0 ) {
-				north = new Tile (Mrow-1, Mcol, '@');
-			} 
-			if (Mrow < row.length()-1) {
-				south = new Tile(Mrow+1, Mcol, '@');
-			}
-			if (Mcol < row.length()-1) {
-				east = new Tile(Mrow, Mcol+1, '@');
-			}
-			if (Mcol > 0) {
-				west = new Tile(Mrow, Mcol-1, '@');
 			}
 			
 			
@@ -127,11 +116,21 @@ public class p2 {
 
 	
 	/*
-	 * Used to add to the coordinate list when Wol moved
+	 * Used to determine the N S E W
 	 */
-	public void move(Queue<Tile> help) {
+	public void queuePath() {
 		
-		
+		while (queue.dequeue().getType() != '$') {
+			
+//			for (int row = 0; row < ; row++) {
+//				
+//			}
+			
+			
+		}
+			
+			
+			
 		
 	}
 	
@@ -141,7 +140,9 @@ public class p2 {
 	public static boolean impossible() {
 		boolean temp = false;
 		
-		
+		if (north.getType() == '@' && south.getType()=='@'&&east.getType()=='@'&&west.getType()=='@') {
+			temp = true;
+		}
 		
 		
 		return temp;

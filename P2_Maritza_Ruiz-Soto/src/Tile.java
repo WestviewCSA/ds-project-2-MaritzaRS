@@ -35,4 +35,10 @@ public class Tile {
 		this.type = type;
 	}
 	
+	public void hasType(int Row, int Col) {
+//		if ( || type != '.') {
+//			
+//		}
+	}
+	
 }
