@@ -5,30 +5,41 @@ import java.util.Scanner;
 import java.util.regex.MatchResult;
 
 public class p2 {
-	private static Queue<Tile> maze;
+	private static Queue<Tile> queue;
 	private static Tile wolverine;
-	private static Queue<Tile> coord;
-	private static String[][] coord2;
+	private static Queue<Tile> visited;
+	//private static String[][] coord2;
 	private static Tile diamond;
+	private static int Mrow;
+	private static int Mcol;
+	
+	private static Tile north;
+	private static Tile south;
+	private static Tile east;
+	private static Tile west;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-		/*
-		 * From David
-		 */
-		maze = new Queue<Tile>();
+		queue = new Queue<Tile>();
 		
-		coord = new Queue<Tile>();
+		visited = new Queue<Tile>();
 		
 		readMap("2_FromSpecs");
 		
-		Tile flop = coord.dequeue();
+		Tile flop = visited.dequeue();
 		
-		//coord.enqueue(wolverine);
-		maze.enqueue(wolverine);
+		visited.enqueue(wolverine);
+		queue.enqueue(wolverine);
 		
+		Mrow = wolverine.getRow();
+		Mcol = wolverine.getCol();
 		
+		//System.out.println(wolverine.getType()+" "+ wolverine.getRow() +" "+ wolverine.getCol());
+		
+		//we want to peek the top of the stack,
+		//use peek
+		//fior quee use dequeue
+		//
 		
 		if (impossible() == true) {
 			System.out.println("The Wolverine Store is closed.");
@@ -60,12 +71,6 @@ public class p2 {
 				String row = scan.nextLine();
 				
 				System.out.println(row);
-				/*
-				 * for sum reason, this line is printing my maze
-				 * One row at a time
-				 * 
-				 */
-				
 				//For each row, if it has char, I want it to add to the arraylist
 				if (row.length() > 0) {
 					for (int i = 0; i < numCols && i < row.length(); i++) {
@@ -82,8 +87,10 @@ public class p2 {
 						} else if (el == '$') {
 							diamond = obj;
 						}
-						coord.enqueue(obj);
+						//queue.enqueue(obj);
 //						coord.add(el + " " + i + " " + rowIndex + " " + numRooms);
+						
+						
 					}
 					
 				}
@@ -91,11 +98,25 @@ public class p2 {
 				
 			}
 			
+			if (Mrow > 0 ) {
+				north = new Tile (Mrow-1, Mcol, '@');
+			} 
+			if (Mrow < row.length()-1) {
+				south = new Tile(Mrow+1, Mcol, '@');
+			}
+			if (Mcol < row.length()-1) {
+				east = new Tile(Mrow, Mcol+1, '@');
+			}
+			if (Mcol > 0) {
+				west = new Tile(Mrow, Mcol-1, '@');
+			}
+			
+			
 			System.out.println();
 			System.out.println(numRows + " " + numCols + " " + numRooms);
-			coord2 = new String[counter][4]; 
+			//coord2 = new String[counter][4]; 
 			//this will be used to display the visited coordinates
-			System.out.println(coord);
+			System.out.println(visited);
 			//coord2[0][coord2[0].length] = []{0, 0, 0, numRows}];
 			
 		} catch (FileNotFoundException e) {
