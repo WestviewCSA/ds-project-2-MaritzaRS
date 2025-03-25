@@ -103,6 +103,8 @@ public class p2 {
 			
 			System.out.println();
 			System.out.println(numRows + " " + numCols + " " + numRooms);
+			System.out.println();
+			System.out.println(maze);
 			//coord2 = new String[counter][4]; 
 			//this will be used to display the visited coordinates
 			System.out.println(visited);
